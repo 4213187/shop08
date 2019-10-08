@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false" %>
 <html>
 <head>
-    <title>级联菜单显示</title>
+    <title>级联菜单</title>
     <script src="js/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
