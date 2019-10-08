@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.mapper.OperationDataMapper">
+
+
+    <insert id="add" parameterType="OperationData">
+        insert  into operation_data values(#{uuid},#{adminId},#{adminAname},#{adminApwd},#{adminDisabled},#{adminGrade})
+    </insert>
+    <select id="findByUUID" parameterType="string" resultMap="findByUUIDMap">
+        select uuid,admin_id,admin_aname,admin_apwd,admin_disabled,admin_grade from operation_data where uuid =#{uuid}
+    </select>
+    <resultMap id="findByUUIDMap" type="OperationData">
+        <result column="uuid" property="uuid"></result>
+        <result column="admin_id" property="adminId"></result>
+        <result column="admin_aname" property="adminAname"></result>
+        <result column="admin_apwd" property="adminApwd"></result>
+        <result column="admin_disabled" property="adminDisabled"></result>
+        <result column="admin_grade" property="adminGrade"></result>
+
+    </resultMap>
+
+
+</mapper>

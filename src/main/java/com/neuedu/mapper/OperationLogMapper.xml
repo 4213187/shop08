@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.mapper.OperationLogMapper">
+
+    <select id="findAll" resultMap="operationLogFindAll">
+        select operator,object,type,content,operation_date,ip,status,uuid from  operation_log
+        ORDER BY operation_date desc
+    </select>
+    <select id="findByUUID" resultMap="operationLogFindAll" parameterType="string">
+        select operator,object,type,content,operation_date,ip,status,uuid from  operation_log
+        where uuid =#{uuid}
+    </select>
+    <insert id="add" parameterType="OperationLog">
+        insert  into operation_log values(#{operator},#{object},#{type},#{content},now(),#{ip},0,#{uuid})
+    </insert>
+    <update id="update" parameterType="OperationLog">
+        update operation_log set status =1  where uuid =#{uuid}
+    </update>
+    <resultMap id="operationLogFindAll" type="OperationLog">
+        <result column="operator" property="operator"></result>
+        <result column="type" property="type"></result>
+        <result column="content" property="content"></result>
+        <result column="operation_date" property="operationDate"></result>
+        <result column="ip" property="ip"></result>
+        <result column="status" property="status"></result>
+        <result column="uuid" property="uuid"></result>
+    </resultMap>
+
+
+</mapper>

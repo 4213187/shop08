@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.mapper.AddrMapper">
+    <select id="findAllProvince" resultMap="provinceMap">
+        select _id,name ,province_id from province
+    </select>
+    <select id="findByProvince" parameterType="string" resultMap="cityMap">
+        select _id,name,city_id,province_id from city where province_id=#{provinceId}
+    </select>
+    <select id="findByCity" parameterType="string" resultMap="countryMap">
+        select _id,name,country_id,city_id from country where city_id=#{cityId}
+    </select>
+    <resultMap id="countryMap" type="Country">
+        <result property="id" column="_id"></result>
+        <result property="name" column="name"></result>
+        <result property="cityId" column="city_id"></result>
+        <result property="countryId" column="country_id"></result>
+    </resultMap>
+    <resultMap id="cityMap" type="City">
+        <result property="id" column="_id"></result>
+        <result property="name" column="name"></result>
+        <result property="cityId" column="city_id"></result>
+        <result property="provinceId" column="province_id"></result>
+    </resultMap>
+    <resultMap id="provinceMap" type="Province">
+        <result  property="id" column="_id"></result>
+        <result  property="name" column="name"></result>
+        <result  property="provinceId" column="province_id"></result>
+    </resultMap>
+</mapper>

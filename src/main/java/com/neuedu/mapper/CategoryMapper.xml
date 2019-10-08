@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.mapper.CategoryMapper">
+
+    <select id="findAll" resultMap="categoryTree">
+        select id,name,descr,pid,leaf,grade from t_category where pid=0
+    </select>
+    <select id="selectCategoryChildrenByPid" resultMap="categoryTree" parameterType="Integer">
+        select id,name,descr,pid,leaf,grade from t_category  where pid = #{id}
+    </select>
+    <resultMap type="Category" id="categoryTree">
+        <result column="id" property="id"  />
+        <result column="name" property="name"  />
+        <result column="descr" property="descr"  />
+        <result column="pid" property="pid"  />
+        <result column="leaf" property="leaf"  />
+        <result column="grade" property="grade"  />
+        <collection column="id" property="children" ofType="Category"  select="selectCategoryChildrenByPid"/>
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.mapper.AdminLogMapper">
+    <insert id="add" parameterType="AdminLog">
+      insert into admin_log values(#{aname},#{ip},now())
+  </insert>
+    <select id="findAll" resultMap="AdminLogFindAll">
+        select admin_name,ip,login_date from  admin_log join t_admin on t_admin.aname =admin_log.admin_name
+        where t_admin.grade>1
+        ORDER BY login_date desc
+    </select>
+    <select id="findByAname" parameterType="string" resultMap="AdminLogFindAll">
+        select admin_name,ip,login_date from  admin_log where  admin_name = #{aname} ORDER BY login_date desc
+    </select>
+    <resultMap id="AdminLogFindAll" type="AdminLog">
+        <result column="admin_name" property="aname"></result>
+        <result column="ip" property="ip"></result>
+        <result column="login_date" property="loginDate"></result>
+    </resultMap>
+
+
+</mapper>

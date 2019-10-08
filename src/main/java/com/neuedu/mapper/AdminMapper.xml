@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.mapper.AdminMapper">
+   <select id="findAll" parameterType="int" resultType="Admin" >
+    select  id,aname,apwd,disabled,grade from t_admin where grade > #{grade}
+   </select>
+    <select id="find"  resultType="Admin">
+         select  id,aname,apwd,disabled,grade from t_admin where aname =#{aname} and apwd =#{pwd} and disabled =0
+    </select>
+    <delete id="delete">
+         delete from t_admin where  id =#{id}
+    </delete>
+    <insert id="add" parameterType="Admin">
+         insert  into t_admin(id,aname,apwd,disabled,grade) values(#{id},#{aname},#{apwd},#{disabled},#{grade})
+    </insert>
+    <select id="findById" parameterType="int" resultType="Admin">
+        select  id,aname,apwd,disabled,grade from t_admin where id=#{id}
+    </select>
+    <select id="findByAname" parameterType="string" resultType="Admin">
+        select  id,aname,apwd,disabled,grade from t_admin where aname=#{aname}
+    </select>
+
+    <update id="update" parameterType="Admin">
+        update t_admin
+        <set>
+            <if test="apwd!=null and apwd!=''">
+                apwd =#{apwd},
+            </if>
+
+            <if test="disabled!=null ">
+                disabled=#{disabled},
+            </if>
+
+            <if test="grade!=null ">
+                grade=#{grade}
+            </if>
+
+        </set>
+
+        where id =#{id}
+    </update>
+
+
+
+</mapper>

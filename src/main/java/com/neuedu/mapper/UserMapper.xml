@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.mapper.UserMapper">
+    <select id="findAll" resultMap="findAllMap">
+       select  id,user_name,user_password,user_phone,user_email,user_register_date,disabled,vip,expiry_date,user_id,province,city,country,address
+        from  t_user join address on address.user_id =t_user.id
+   </select>
+    <select id="findById" parameterType="int" resultMap="findAllMap">
+         select  id,user_name,user_password,user_phone,user_email,user_register_date,disabled,vip,expiry_date,user_id,province,city,country,address
+        from  t_user join address on address.user_id =t_user.id where id=#{id}
+    </select>
+    <update id="update" parameterType="User">
+        update t_user
+        <set>
+            <if test="userPassword!=null and userPassword!=''">
+                user_password =#{userPassword},
+            </if>
+            <if test="disabled!=null">
+                disabled =#{disabled},
+            </if>
+            <if test="vip!=null">
+                vip =#{vip},
+            </if>
+            <if test="expiryDate!=null">
+                expiry_date =#{expiryDate},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+    <resultMap id="findAllMap" type="User">
+        <result column="id" property="id"></result>
+        <result column="user_name" property="userName"></result>
+        <result column="user_password" property="userPassword"></result>
+        <result column="user_phone" property="userPhone"></result>
+        <result column="user_email" property="userEmail"></result>
+        <result column="user_register_date" property="userRegisterDate"></result>
+        <result column="disabled" property="disabled"></result>
+        <result column="vip" property="vip"></result>
+        <result column="expiry_date" property="expiryDate"></result>
+        <collection property="addresses" ofType="Address">
+            <result column="user_id" property="userId"></result>
+            <result column="province" property="province"></result>
+            <result column="city" property="city"></result>
+            <result column="country" property="country"></result>
+            <result column="address" property="address"></result>
+        </collection>
+    </resultMap>
+
+
+</mapper>
