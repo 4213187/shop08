@@ -1,19 +1,24 @@
-package com.neuedu.mapper;
+package com.neuedu.service;
 
 import com.neuedu.entity.Category;
 
 import java.util.List;
 
-public interface CategoryMapper {
+/**
+ * @author 小浩
+ * @version 1.0
+ * @date 2019/10/8 18:21
+ */
+public interface CategoryService {
     /**
-     * 递归查询所有的类别
+     * 递归查询类别
      *
      * @return List<Category>
      */
     List<Category> findAll();
 
     /**
-     * 添加根节点
+     * 添加根类别
      *
      * @param category 类别
      */

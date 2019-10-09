@@ -1,9 +1,11 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="gbk" />
+<meta charset="utf-8" />
 
-<title>Ìí¼Ó¸ùÀà±ð</title>
+<title>æ·»åŠ æ ¹ç±»åˆ«</title>
 <link rel="stylesheet" href="css/bootstrap.css" />
 <link rel="stylesheet" href="css/bootstrap-responsive.css" />
 <link rel="stylesheet" href="css/styles.css" />
@@ -19,76 +21,36 @@
 <script src="js/fullcalendar.min.js"></script>
 <script src="js/gcal.js"></script>
 <script src="js/setup.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 </head>
 <body>
-	<!-- header²¿·Ö -->
-	<div id="in-nav">
-		<div class="container">
-			<div class="row">
-				<div class="span12">
-					<ul class="pull-right">
-						<li><a href="#">Á´½Ó1</a></li>
-						<li><a href="#">Á´½Ó2</a></li>
-						<li><a href="#">Á´½Ó3</a></li>
-						<li><a href="login.html">µÇÂ¼</a></li>
-					</ul>
-					<a id="logo" href="index.html">
-						<h4>
-							µçÉÌÆ½Ì¨ºóÌ¨<strong>¹ÜÀí</strong>
-						</h4>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="in-sub-nav">
-		<div class="container">
-			<div class="row">
-				<div class="span12">
-					<ul>
-						<li><a href="index.html" class="active"><i
-								class="batch home"></i><br />Ö÷Ò³</a></li>
-						<li><span class="label label-important pull-right">08</span><a
-							href="admins.html"><i class="batch stream"></i><br />¹ÜÀíÔ±ÁÐ±í</a></li>
-						<li><a href="user_list.jsp"><i class="batch users"></i><br />ÓÃ»§ÁÐ±í</a></li>
-						<li><a href="categories.html"><i class="batch forms"></i><br />Àà±ðÁÐ±í</a></li>
-						<li><a href="products.html"><i class="batch quill"></i><br />ÉÌÆ·ÁÐ±í</a></li>
-						<li><span class="label label-important pull-right">04</span><a
-							href="orders.html"><i class="batch plane"></i><br />¶©µ¥ÁÐ±í</a></li>
-						<li><a href="anothers.html"><i class="batch calendar"></i><br />ÆäËüÀ©Õ¹¹¦ÄÜ</a></li>
-						<li><a href="settings.html"><i class="batch settings"></i><br />ÏµÍ³ÉèÖÃ</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+<%@include file="header.jsp" %>
 	<div class="page">
 		<div class="page-container">
 			<div class="container">
 				<div class="row">
 					<div class="span12">
-						<h4 class="header">Ìí¼Ó¸ùÀà±ð</h4>
-						<form action="addRootCategory.do" method="post">
+						<h4 class="header">æ·»åŠ æ ¹ç±»åˆ«</h4>
+						<form action="CategoryServlet?method=addRoot" method="post">
 							<table class="table table-striped sortable">
 								<thead>
 								</thead>
 								<tbody>
 									<tr>
-										<th>Àà±ðÃû³Æ</th>
+										<th>ç±»åˆ«åç§°</th>
 										<td><input type="text" name="name"/></td>
 									</tr>
 									<tr>
-										<th>Àà±ðÃèÊö</th>
+										<th>ç±»åˆ«æè¿°</th>
 										<td><textarea rows="5" cols="20" name="descr"></textarea></td>
 									</tr>
 									
 									<tr>
 										<td></td>
 										<td><input class="btn btn-success" type="submit"
-											value="Ìí¼Ó" />&nbsp;&nbsp;&nbsp;<input class="btn btn-danger"
-											type="reset" value="ÖØÖÃ" /></td>
+											value="æ·»åŠ " />&nbsp;&nbsp;&nbsp;<input class="btn btn-danger"
+											type="reset" value="é‡ç½®" /></td>
 										<td></td>
 										<td></td>
 										<td></td>
@@ -105,7 +67,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="span12">
-				<p class="pull-right">°æÈ¨ËùÓÐ&nbsp;&nbsp;&nbsp;¿ÉÒÔ·­°æ</p>
+				<p class="pull-right">ç‰ˆæƒæ‰€æœ‰&nbsp;&nbsp;&nbsp;å¯ä»¥ç¿»ç‰ˆ</p>
 				<p>&copy; Copyright 2018 Somnus</p>
 			</div>
 		</div>

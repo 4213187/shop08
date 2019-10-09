@@ -8,33 +8,6 @@
     }
 
 %>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-    <meta name="description" content="description of your site" />
-    <meta name="author" content="author of the site" />
-    <title>电商平台后台首页</title>
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/bootstrap-responsive.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/toastr.css" />
-    <link rel="stylesheet" href="css/fullcalendar.css" />
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/jquery.knob.js"></script>
-
-<%--    <script src="http://d3js.org/d3.v3.min.js"></script>--%>
-<%--    <script src="js/jquery.sparkline.min.js"></script>--%>
-    <script src="js/toastr.js"></script>
-    <script src="js/jquery.tablesorter.min.js"></script>
-    <script src="js/jquery.peity.min.js"></script>
-    <script src="js/fullcalendar.min.js"></script>
-    <script src="js/gcal.js"></script>
-    <script src="js/setup.js"></script>
-</head>
-<body>
 <div id="in-nav">
     <div class="container">
         <div class="row">
@@ -63,7 +36,7 @@
                             class="batch home"></i><br />主页</a></li>
                     <li><a   href="AdminServlet?method=findAll"><i class="batch stream"></i><br />管理员列表</a></li>
                     <li><a href="UserServlet?method=findAll"><i class="batch users"></i><br />用户列表</a></li>
-                    <li><a href="categories.html"><i class="batch forms"></i><br />类别列表</a></li>
+                    <li><a href="category_list.jsp"><i class="batch forms"></i><br />类别列表</a></li>
                     <li><a href="products.html"><i class="batch quill"></i><br />商品列表</a></li>
                     <li><a href="orders.html"><i class="batch plane"></i><br />订单列表</a></li>
                     <li><a href="anothers.html"><i class="batch calendar"></i><br />其它扩展功能</a></li>

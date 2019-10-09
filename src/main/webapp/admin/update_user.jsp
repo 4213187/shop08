@@ -1,36 +1,63 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--<!DOCTYPE html>--%>
-<%@include file="header.jsp" %>
-<script src="laydate/laydate.js" ></script>
-<script>
-    laydate.render({
-        elem: '#expiryDate'
-        ,type: 'datetime'
-        ,lang: 'en'
-        ,min: '${user.expiryDate}'// 这里是设置最小日期
-        ,btns: ['clear', 'confirm']
-    });
-    // function getNowFormatDate() {
-    //
-    //     var date = new Date(s );
-    //     var seperator1 = "-";
-    //     var seperator2 = ":";
-    //     var month = date.getMonth() + 1;
-    //     var strDate = date.getDate();
-    //     if (month >= 1 && month <= 9) {
-    //         month = "0" + month;
-    //     }
-    //     if (strDate >= 0 && strDate <= 9) {
-    //         strDate = "0" + strDate;
-    //     }
-    //     var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
-    //         + " " + date.getHours() + seperator2 + date.getMinutes()
-    //         + seperator2 + date.getSeconds();
-    //     return currentdate;
-    // }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="description" content="description of your site" />
+    <meta name="author" content="author of the site" />
+    <title>电商平台后台首页</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/bootstrap-responsive.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/toastr.css" />
+    <link rel="stylesheet" href="css/fullcalendar.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.knob.js"></script>
+    <script src="laydate/laydate.js"  ></script>
+    <%--    <script src="http://d3js.org/d3.v3.min.js"></script>--%>
+    <%--    <script src="js/jquery.sparkline.min.js"></script>--%>
+    <script src="js/toastr.js"></script>
+    <script src="js/jquery.tablesorter.min.js"></script>
+    <script src="js/jquery.peity.min.js"></script>
+    <script src="js/fullcalendar.min.js"></script>
+    <script src="js/gcal.js"></script>
+    <script src="js/setup.js"></script>
+    <script>
+        laydate.render({
+            elem: '#expiryDate'
+            ,type: 'datetime'
+            ,lang: 'en'
+            ,min: '${user.expiryDate}'// 这里是设置最小日期
+            ,btns: ['clear', 'confirm']
+        });
+        // function getNowFormatDate() {
+        //
+        //     var date = new Date(s );
+        //     var seperator1 = "-";
+        //     var seperator2 = ":";
+        //     var month = date.getMonth() + 1;
+        //     var strDate = date.getDate();
+        //     if (month >= 1 && month <= 9) {
+        //         month = "0" + month;
+        //     }
+        //     if (strDate >= 0 && strDate <= 9) {
+        //         strDate = "0" + strDate;
+        //     }
+        //     var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+        //         + " " + date.getHours() + seperator2 + date.getMinutes()
+        //         + seperator2 + date.getSeconds();
+        //     return currentdate;
+        // }
 
-</script>
+    </script>
+</head>
+<body>
+<%@include file="header.jsp" %>
+
+
 <div class="page">
     <div class="page-container">
         <div class="container">

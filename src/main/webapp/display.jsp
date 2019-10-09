@@ -17,6 +17,7 @@
                  url:"AddrServlet?method=findAllProvince",
                  dataType:"json",
                  success:function (provinces) {
+                      console.log(provinces);
                       for (i =0; i<provinces.length;i++) {
                           var  p = provinces[i];
                           $("<option value='"+p.provinceId+"'>"+p.name+"</option>").appendTo("#province");

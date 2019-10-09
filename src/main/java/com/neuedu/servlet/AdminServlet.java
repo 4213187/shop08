@@ -33,10 +33,12 @@ import java.util.List;
 
 @WebServlet(name = "AdminServlet", urlPatterns = "/admin/AdminServlet")
 public class AdminServlet extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doGet(request, response);
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SqlSession sqlSession = MyBatisUtil.getSession();
         AdminMapper adminMapper = sqlSession.getMapper(AdminMapper.class);

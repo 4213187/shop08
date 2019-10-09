@@ -10,6 +10,18 @@
     <select id="selectCategoryChildrenByPid" resultMap="categoryTree" parameterType="Integer">
         select id,name,descr,pid,leaf,grade from t_category  where pid = #{id}
     </select>
+    <select id="findById" resultMap="categoryTree" parameterType="int">
+        select id,name,descr,pid,leaf,grade from t_category  where id = #{id}
+    </select>
+    <update id="updateLeafById" parameterType="int">
+        update  t_category set leaf = 0 where  id =#{id}
+    </update>
+    <insert id="addRoot" parameterType="Category">
+        insert  into t_category values (null,#{name},#{descr},0,1,1)
+    </insert>
+    <insert id="addChild" parameterType="Category">
+        insert  into t_category values (null,#{name},#{descr},#{pid},1,#{grade})
+    </insert>
     <resultMap type="Category" id="categoryTree">
         <result column="id" property="id"  />
         <result column="name" property="name"  />

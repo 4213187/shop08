@@ -90,7 +90,7 @@
                     </c:if>
 
                     <li><a href="UserServlet?method=findAll"><i class="batch users"></i><br/>用户列表</a></li>
-                    <li><a href="categories.html"><i class="batch forms"></i><br/>类别列表</a></li>
+                    <li><a href="category_list.jsp"><i class="batch forms"></i><br/>类别列表</a></li>
                     <li><a href="products.html"><i class="batch quill"></i><br/>商品列表</a></li>
                     <li>
 <%--                        <span class="label label-important pull-right">04</span>--%>
@@ -174,7 +174,7 @@
                                 <ul>
                                     <li><a href="add_category_root.jsp"> <i
                                             class="pull-right icon-plane"></i>添加根类别
-                                    </a><a href="categories.jsp"> <i class="pull-right icon-fire"></i>类别列表
+                                    </a><a href="category_list.jsp"> <i class="pull-right icon-fire"></i>类别列表
                                     </a></li>
                                 </ul>
                             </li>
