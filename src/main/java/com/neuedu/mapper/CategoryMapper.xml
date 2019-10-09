@@ -16,6 +16,18 @@
     <update id="updateLeafById" parameterType="int">
         update  t_category set leaf = 0 where  id =#{id}
     </update>
+    <update id="updateInfo" parameterType="Category">
+        update  t_category
+        <set>
+            <if test="name!=null and name!=''">
+                name =#{name},
+            </if>
+            <if test="descr!=null and descr!=''">
+                descr =#{descr}
+            </if>
+        </set>
+        where  id =#{id}
+    </update>
     <insert id="addRoot" parameterType="Category">
         insert  into t_category values (null,#{name},#{descr},0,1,1)
     </insert>

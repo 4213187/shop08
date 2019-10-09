@@ -45,4 +45,10 @@ public interface CategoryService {
      * @param id 类别的id
      */
     void updateLeafById(int id);
+
+    /**
+     * 修改类型的信息
+     * @param category 修改的类型
+     */
+    void updateInfo(Category category);
 }

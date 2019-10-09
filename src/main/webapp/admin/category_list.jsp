@@ -69,6 +69,7 @@
                      "<ul class='dropdown-menu'> " +
 
                         li +
+                        "<li><a href='CategoryServlet?method=toupdate&id="+c.id+"'>修改</a> " +
                         "<li><a href='#'>删除</a> " +
                       "</ul> " +
                   "</div> " +

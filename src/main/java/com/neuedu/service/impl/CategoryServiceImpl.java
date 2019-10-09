@@ -41,4 +41,9 @@ public class CategoryServiceImpl implements CategoryService {
     public void updateLeafById(int id) {
         categoryMapper.updateLeafById(id);
     }
+
+    @Override
+    public void updateInfo(Category category) {
+        categoryMapper.updateInfo(category);
+    }
 }

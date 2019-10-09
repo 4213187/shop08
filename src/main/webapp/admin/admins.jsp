@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-	<%@include file="header.jsp"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +28,7 @@
 	<script src="js/setup.js"></script>
 </head>
 <body>
+<%@include file="header.jsp"%>
 	<div class="page">
 		<div class="page-container">
 			<div class="container">
@@ -67,8 +68,8 @@
 
 									<td>
 										<div class="btn-group">
-											<button class="btn">操作</button>
-											<button data-toggle="dropdown" class="btn dropdown-toggle">
+											<button class="btn btn-info">操作</button>
+											<button data-toggle="dropdown" class="btn btn-info dropdown-toggle">
 												<span class="caret"></span>
 											</button>
 											<ul class="dropdown-menu">
@@ -139,7 +140,7 @@
 		</div>
 	</footer>
 </body>
-<script src="js/d3-setup.js"></script>
+<%--<script src="js/d3-setup.js"></script>--%>
 <%--<script>--%>
 <%--	protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';--%>
 <%--	address = protocol + window.location.host + window.location.pathname--%>

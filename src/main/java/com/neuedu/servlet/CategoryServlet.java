@@ -77,6 +77,23 @@ public class CategoryServlet extends HttpServlet {
             response.sendRedirect("category_list.jsp");
 
 
+        }else  if ("toupdate".equals(method)){
+            int id =Integer.parseInt(request.getParameter("id"));
+            Category category = categoryService.findById(id);
+            request.setAttribute("category",category);
+            request.getRequestDispatcher("update_category.jsp").forward(request,response);
+
+        }else if ("update".equals(method)){
+            int id =Integer.parseInt(request.getParameter("id"));
+            String name = request.getParameter("name");
+            String  descr = request.getParameter("descr");
+            Category category = categoryService.findById(id);
+            category.setName(name);
+            category.setDescr(descr);
+            categoryService.updateInfo(category);
+            MyBatisUtil.sessionCommit(sqlSession);
+            response.sendRedirect("category_list.jsp");
+
         }
     }
 }
